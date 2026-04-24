@@ -35,7 +35,7 @@ namespace Task_1
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("\tDebters:");
-            var debters = visitors.Where(v => v.IssueDate !< DateTime.Now.AddMonths(-1));
+            var debters = visitors.Where(v => v.IssueDate !< DateTime.Now.AddMonths(-1)).OrderByDescending(v => v.IssueDate);
             foreach (var debter in debters)
             {
                 TimeSpan debtcross = DateTime.Now.AddMonths(-1) - debter.IssueDate;
